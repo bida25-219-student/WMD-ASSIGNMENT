@@ -1,163 +1,188 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My First GitHub Page</title>
-<!-- Bootstrap CSS --> 
+<title>Ronaldo Fan Hub</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css"> 
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND IMAGE */
+.background {
+    background: url('background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f5c518;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* SECTIONS */
+.section {
+    padding: 40px 0;
+}
+
+/* IMAGES */
+img {
+    border-radius: 10px;
+}
+
+/* CARD */
+.card {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
-  <!-- Bootstrap JS and dependencies --> 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> 
+<div class="background">
+<div class="overlay">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
-<header> 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Ronaldo Fan Hub</a>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="container"> 
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="trophies.html">Trophies</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="form.html">Form</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
+            </ul>
+        </div>
+    </div>
+</nav>
 
-            <a class="navbar-brand" href="index.html">My Website</a> 
+<!-- HERO -->
+<section class="hero">
+    <h1>CR7 – The Greatest</h1>
+    <p>“Your love makes me strong. Your hate makes me unstoppable.”</p>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+    <img src="6364b15a5c417bd34bc90030105280a2.jpg" class="img-fluid mt-3" width="300">
+</section>
 
-                <span class="navbar-toggler-icon"></span> 
+<!-- ABOUT -->
+<section class="container section">
+    <h2 class="text-center mb-4">About Cristiano Ronaldo</h2>
 
-            </button> 
+    <p>
+        Cristiano Ronaldo is more than just a footballer — he is a global icon of discipline, hard work, and greatness.
+        His journey from humble beginnings to becoming one of the greatest players ever is built on determination and consistency.
+    </p>
 
-            <div class="collapse navbar-collapse" id="navbarNav"> 
+    <p>
+        Known as <b>CR7</b>, he is famous for his athleticism, powerful shots, and winning mentality.
+        He is also called <b>“Mr. Champions League”</b>.
+    </p>
+</section>
 
-                <ul class="navbar-nav"> 
+<!-- GALLERY -->
+<section class="container section text-center">
+    <h2 class="mb-4">Legend Moments</h2>
 
-                    <li class="nav-item"> 
+    <div class="row">
+        <div class="col-md-4">
+            <img src="EcPq27bWkAIeaxN.jpg" class="img-fluid mb-3">
+        </div>
+        <div class="col-md-4">
+            <img src="550x756.jpg" class="img-fluid mb-3">
+        </div>
+        <div class="col-md-4">
+            <img src="c33676d79f5b2b344f62f981ddfe2f5c.jpg" class="img-fluid mb-3">
+        </div>
+    </div>
+</section>
 
-                        <a class="nav-link" href="index.html">Home</a> 
+<!-- MENTALITY -->
+<section class="container section">
+    <h2 class="text-center mb-4">Mentality</h2>
 
-                    </li> 
+    <p>
+        Ronaldo’s confidence is often misunderstood as ego, but it is actually his strongest weapon.
+        His mindset and discipline are what made him one of the greatest footballers of all time.
+    </p>
 
-                    <li class="nav-item"> 
+    <div class="text-center mt-4">
+        <img src="maxresdefault.jpg" width="200">
+        <img src="images (1).jpg" width="200">
+        <img src="images.jpg" width="200">
+    </div>
+</section>
 
-                        <a class="nav-link" href="about.html">About</a> 
-
-                    </li> 
-
-                    <li class="nav-item">
-
-                     <a class="nav-link" href="trophies.html">Trophies</a>
-                     
-                    </li>
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="contact.html">Contact</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="form.html">Form</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="table.html">Table</a> 
-
-                    </li> 
-
-                </ul> 
-
-            </div> 
-
-        </div> 
-
-    </nav> 
-
-</header> 
-
-
-<main class="container my-5"> 
-
-    <div class="row"> 
-
-        <div class="col-md-8"> 
-
-            <h2>Welcome to My Website!</h2> 
-
-            <p>This is a simple webpage hosted on GitHub Pages.</p> 
-
-            <p>Here's a picture of Prime CR7:</p> 
-
-<div style="display: flex; gap: 20px; justify-content: center;">
-     <img src="6364b15a5c417bd34bc90030105280a2.jpg" alt="Mr Ego" class="img-fluid rounded">
-</div>
-            <h3>A Football Legend & Icon</h3>
-
+<!-- CARD -->
+<section class="container section">
+    <div class="card">
+        <div class="card-body">
+            <h5>Did You Know?</h5>
             <p>
-                Christiano Ronaldo is more tan just a footballer - he is a symbol of excellence, discipline, and determination. Known forhis incredible athletic ability, powerful shooting, and unmatched work ethic, Ronaldo has built a career tha inspires millions around the world. His journey to greatness was not easy, but through sacrifice ad relentless training, he transformed himself into one of the most complete players in football history.
+                Cristiano Ronaldo has scored over 800 career goals and continues to break records.
             </p>
+        </div>
+    </div>
+</section>
 
-            <p>
-                Christiano is known by several famous nicknames. The most popular is <b>CR7</b>. He is also often called "The Machine" because of his incredible athleticism, strength, and consistency over the years. Some fans refer him as "Mr. Champions League" because of his remarkable performances and goal-scoring record in the <b>UEFA Champions League</b>.
-            </p>
-
-  <div style="display: flex; gap: 40px; justify-content: center;">
-<img src="EcPq27bWkAIeaxN.jpg" alt="Mr UCL" class="img-fluid rounded" width="300">
- <img src="550x756.jpg" alt="Mr UCL" class="img-fluid rounded" width="200">
- <img src="c33676d79f5b2b344f62f981ddfe2f5c.jpg" alt="Mr UCL" class="img-fluid rounded" width="200">
-  </div>
-<p>
-    However, with greatness often comes with criticism. Some view Ronaldo having a big ego because of his confidence, bod language, and a  strog desire to be the best. But many of his supporters argue that his confidence is part of what made him successful, thus, having a stronger mentality.
-</p>
-
-<div style="display: flex; gap: 40px; justify-content: center;">
-<img src="maxresdefault.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="200">
- <img src="images (1).jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="200">
- <img src="images.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="200">
-  </div>
-            <p class="mt-3">Visit <a href="https://github.com" class="btn btn-primary">GitHub</a> to learn more about his Glorious Era days.</p> 
-
-        </div> 
-
-        <div class="col-md-4"> 
-
-            <div class="card"> 
-
-                <div class="card-body"> 
-
-                    <h5 class="card-title">Did You Know?</h5> 
-
-                    <p class="card-text">GitHub Pages is a free service to host static websites directly from your GitHub repository.</p> 
-
-                </div> 
-
-            </div> 
-
-        </div> 
-
-    </div> 
-
-</main> 
-
-
+<!-- FOOTER -->
 <footer>
-
-<p>&copy; 2026 Yaone Cameron Phalane</p>
-
+    <p>© 2026 Ronaldo Fan Hub | Created by Yaone Phalane</p>
 </footer>
 
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>

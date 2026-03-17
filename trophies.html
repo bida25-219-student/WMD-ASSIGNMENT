@@ -1,175 +1,133 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Trophies</title>
+<title>Ronaldo Trophies</title>
 
 <!-- Bootstrap CSS -->
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css"> 
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
 
+/* DARK OVERLAY */
+.overlay {
+    background: rgba(0,0,0,0.7);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(0,0,0,0.9) !important;
+}
+
+/* CONTENT */
+main h2, main h3 {
+    color: #f5c518;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+/* IMAGES */
+img {
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    margin-top: 40px;
+}
+</style>
 </head>
-
 <body>
+<div class="overlay">
 
-    <!-- Bootstrap JS and dependencies -->
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-<header>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-<div class="container">
-
-<a class="navbar-brand" href="index.html">My Website</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-<div class="collapse navbar-collapse" id="navbarNav">
-
-<ul class="navbar-nav">
-
-<li class="nav-item">
-
-<a class="nav-link" href="index.html">Home</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link" href="about.html">About</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link" href="trophies.html">Trophies</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link" href="contact.html">Contact</a>
-
-</li>
-
-<li class="nav-item"> 
-
-<a class="nav-link" href="form.html">Form</a> 
-
-</li> 
-
-<li class="nav-item"> 
-
-<a class="nav-link" href="table.html">Table</a> 
-
-</li> 
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
-
-</header>
-
-<nav>
-
-<a href="index.html">Home</a> 
-
-<a href="about.html">About</a> 
-
-<a href="trophies.html">Trophies</a> 
-
-<a href="contact.html">Contact</a>
-
-</nav>
-<main>
-
-    <title>Trophies</title>
-
-<p>This is a simple webpage hosted on GitHub Pages.</p>
-
-<p>Here's are pictures of Christiano Ronaldo's trophies:</p>
-
-<img src="images 4.jpg" alt="Trophies">
-
-<h3></h3><b>INDIVIDUAL AWARDS</b></h3>
-
-<p>
-     <b>Ballon d'Or(5x)</b>: Won in 2008, 2013, 2014, 2016, 2017
-
-     <div style="display: flex; gap: 40px; justify-content: center;">
-     <img src="ballon d'or.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="images ballon d'or (2).jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="220">
-     <img src="images ballon d'or.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="cristiano-ronaldo-real-madrid la-liga-ballon-dor_.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="images ballon d'or 56.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="220">
-  </div>
-</p>
-
-<p>
-    <b>The best FIFA Men's Player(2x)</b>
-
- <div style="display: flex; gap: 40px; justify-content: center;">
- <img src="images fifa.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
- <img src="maxresdefault fifa.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-  </div>
-</p>
-
-<p>
-     <b>European Golden Shoe(4x)</b>
-
-     <div style="display: flex; gap: 40px; justify-content: center;">
-     <img src="images golden boot 1.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="images golden boot 2.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="220">
-     <img src="images golden boot 3.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="images golden shoe 4.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     </div>
-</p>
-
-<p>
-     <b>Top Scorer Awards</b>: Champions League top scorer (multiple seasons), League top scorer in England, Spain, Italy and Saudi Arabia
-     <div style="display: flex; gap: 40px; justify-content: center;">
-     <img src="images (12).jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
-     <img src="images top scorer 1.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="220">
-     <img src="images top scorer.jpg" alt="Mr Ego Himself" class="img-fluid rounded" width="300">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ronaldo Fan Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="trophies.html">Trophies</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
+          <li class="nav-item"><a class="nav-link" href="form.html">Form</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
-</p>
+    </div>
+  </nav>
 
-<p>
-     Christiano Ronaldo is not just a footballer - he is a symbol of hardwork, discipline, and greatness. His trophies prove that dedication and belief can turn dreams into reality.
-</p>
+  <!-- MAIN CONTENT -->
+  <main class="container my-5">
+    <h2>Christiano Ronaldo's Trophies</h2>
+    <p>Christiano Ronaldo is not just a footballer – he is a symbol of hard work, discipline, and greatness. His trophies prove that dedication and belief can turn dreams into reality.</p>
 
-<p>Visit <a href="https://github.com">GitHub</a> To learn more about his awards</p>
+    <h3>Individual Awards</h3>
+    <p><b>Ballon d'Or (5x)</b>: 2008, 2013, 2014, 2016, 2017</p>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <img src="ballon d'or.jpg" alt="Ballon d'Or" class="img-fluid" width="300">
+      <img src="images ballon d'or (2).jpg" alt="Ballon d'Or" class="img-fluid" width="330">
+      <img src="images ballon d'or.jpg" alt="Ballon d'Or" class="img-fluid" width="330">
+      <img src="cristiano-ronaldo-real-madrid la-liga-ballon-dor_.jpg" alt="Ballon d'Or" class="img-fluid" width="340">
+      <img src="images ballon d'or 56.jpg" alt="Ballon d'Or" class="img-fluid" width="220">
+    </div>
 
-</main>
+    <p><b>The Best FIFA Men's Player (2x)</b></p>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <img src="images fifa.jpg" alt="FIFA Award" class="img-fluid" width="300">
+      <img src="maxresdefault fifa.jpg" alt="FIFA Award" class="img-fluid" width="300">
+    </div>
 
+    <p><b>European Golden Shoe (4x)</b></p>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <img src="images golden boot 1.jpg" alt="Golden Shoe" class="img-fluid" width="300">
+      <img src="images golden boot 2.jpg" alt="Golden Shoe" class="img-fluid" width="220">
+      <img src="images golden boot 3.jpg" alt="Golden Shoe" class="img-fluid" width="300">
+      <img src="images golden shoe 4.jpg" alt="Golden Shoe" class="img-fluid" width="300">
+    </div>
 
-<footer>
+    <p><b>Top Scorer Awards</b>: Champions League top scorer (multiple seasons), League top scorer in England, Spain, Italy, and Saudi Arabia.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <img src="images top scorer 1.jpg" alt="Top Scorer" class="img-fluid" width="220">
+      <img src="images top scorer.jpg" alt="Top Scorer" class="img-fluid" width="300">
+    </div>
 
-<p>&copy; 2026 Yaone Cameron Phalane</p>
+    <p><b>Champions League Winner</b>: Won 5 Champions League Titles (multiple seasons) in England and Spain.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <img src="550x756.jpg" alt="Champions League Winner" class="img-fluid" width="220">
+    </div>
 
-</footer>
+    <p>Visit <a href="https://github.com" class="text-warning" target="_blank">GitHub</a> to learn more about his awards.</p>
+  </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Yaone Cameron Phalane</p>
+  </footer>
 
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>

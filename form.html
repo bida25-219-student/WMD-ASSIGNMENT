@@ -1,227 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ronaldo Fan Form & Table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronaldo Fan Form</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 5px;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    input, select, textarea {
-      margin-bottom: 10px;
-      width: 300px;
-    }
-    button {
-      margin-right: 10px;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
 
-    form {
-      width: 400px;
-      max-width: 90%;
-      margin: 20px auto;
-      padding: 20px;
-      background: #f7f9fc;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+/* NAVBAR */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
 
-    form label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #333;
-      font-size: 14px;
-    }
+/* FORM CARD */
+.form-card {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
 
-    form input[type="text"],
-    form input[type="number"],
-    form select,
-    form textarea {
-      width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: border-color 0.3s;
-    }
+/* FORM ELEMENTS */
+input, select, textarea {
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #ccc;
+    color: #fff;
+}
 
-    form input[type="text"]:focus,
-    form input[type="number"]:focus,
-    form select:focus,
-    form textarea:focus {
-      outline: none;
-      border-color: #0077cc;
-      box-shadow: 0 0 5px rgba(0,119,204,0.5);
-    }
+input::placeholder,
+textarea::placeholder {
+    color: #ddd;
+}
 
-    .gender-group input[type="radio"] {
-      margin-right: 6px;
-      cursor: pointer;
-    }
+.btn-submit {
+    background-color: #18f548;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
 
-    .gender-group label {
-      margin-right: 15px;
-      font-weight: normal;
-      cursor: pointer;
-    }
+.btn-clear {
+    background-color: #dc3545;
+    border: none;
+}
 
-    form button {
-      padding: 10px 20px;
-      font-weight: 600;
-      font-size: 15px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-right: 10px;
-    }
+/* TABLE */
+table {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
 
-    form button[type="submit"] {
-      background-color: #0077cc;
-      color: white;
-    }
+th, td {
+    vertical-align: middle;
+}
 
-    form button[type="submit"]:hover {
-      background-color: #005fa3;
-    }
+/* AGE WARNING */
+#ageWarning {
+    color: #ff5555;
+    display: none;
+}
 
-    form button[type="reset"] {
-      background-color: #ccc;
-      color: #333;
-    }
-
-    form button[type="reset"]:hover {
-      background-color: #999;
-    }
-
-    #ageWarning {
-      color: red;
-      font-size: 13px;
-      display: none;
-      margin-bottom: 10px;
-    }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    margin-top: 40px;
+}
   </style>
 </head>
+
 <body>
 
-  <!-- Bootstrap JS and dependencies --> 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
-<header> 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
-
-        <div class="container"> 
-
-            <a class="navbar-brand" href="index.html">My Website</a> 
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
-
-                <span class="navbar-toggler-icon"></span> 
-
-            </button> 
-
-            <div class="collapse navbar-collapse" id="navbarNav"> 
-
-                <ul class="navbar-nav"> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="index.html">Home</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="about.html">About</a> 
-
-                    </li> 
-
-                    <li class="nav-item">
-
-                     <a class="nav-link" href="trophies.html">Trophies</a>
-
-                    </li>
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="contact.html">Contact</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="form.html">Form</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="table.html">Table</a> 
-
-                    </li> 
-                </ul> 
-
-            </div> 
-
-        </div> 
-
-    </nav> 
-
-</header> 
-
-  <h1 style="text-align:center;">Cristiano Ronaldo Fan Page</h1>
-
-  <form id="fanForm">
-    <label for="name">First Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="surname">Surname:</label>
-    <input type="text" id="surname" name="surname" required>
-
-    <label>Gender:</label>
-    <div class="gender-group">
-      <input type="radio" id="male" name="gender" value="Male" required>
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="Female">
-      <label for="female">Female</label>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ronaldo Fan Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="trophies.html">Trophies</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
+          <li class="nav-item"><a class="nav-link active" href="form.html">Form</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" min="1" max="100" required>
-    <span id="ageWarning">Age must be between 1 and 100.</span>
+  <!-- FORM -->
+  <div class="form-card">
+    <h1 class="text-center mb-4">Join Ronaldo Fans</h1>
 
-    <label for="club">Favorite Version of Ronaldo Club:</label>
-    <select id="club" name="club" required>
-      <option value="">--Select Club--</option>
-      <option value="Manchester United">Manchester United</option>
-      <option value="Real Madrid">Real Madrid</option>
-      <option value="Juventus">Juventus</option>
-      <option value="Al Nassr">Al Nassr</option>
-    </select>
+    <form id="fanForm">
 
-    <label for="reason">Why do you love Ronaldo?</label>
-    <textarea id="reason" name="reason" rows="3" cols="50" required></textarea>
+      <label>First Name:</label>
+      <input type="text" id="name" class="form-control" required placeholder="Enter your first name">
 
-    <input type="submit" value="Submit">
-    <button type="button" id="clearBtn">Clear</button>
-  </form>
+      <label>Surname:</label>
+      <input type="text" id="surname" class="form-control" required placeholder="Enter your surname">
 
-  <h2 style="text-align:center;">Submitted Fans</h2>
+      <label>Gender:</label>
+      <div class="mb-3">
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+      </div>
+
+      <label>Age:</label>
+      <input type="number" id="age" class="form-control" min="1" max="100" required>
+      <span id="ageWarning">Age must be between 1 and 100.</span>
+
+      <label>Favorite Version of Ronaldo:</label>
+      <select id="club" class="form-select" required>
+        <option value="">--Select Club--</option>
+        <option>Manchester United</option>
+        <option>Real Madrid</option>
+        <option>Juventus</option>
+        <option>Al Nassr</option>
+      </select>
+
+      <label>Why do you love Ronaldo?</label>
+      <textarea id="reason" class="form-control" rows="3" required placeholder="Share your reason"></textarea>
+
+      <button type="submit" class="btn btn-submit w-100 mb-2">Submit</button>
+      <button type="button" id="clearBtn" class="btn btn-clear w-100">Clear</button>
+
+    </form>
+  </div>
+
+  <!-- TABLE -->
+  <h2 class="text-center mt-5">Submitted Fans</h2>
+
   <div class="table-responsive" style="width:90%; margin:auto;">
-    <table id="fansTable" class="table table-bordered">
+    <table id="fansTable" class="table table-bordered text-center">
       <tr>
         <th>First Name</th>
         <th>Surname</th>
@@ -233,58 +162,58 @@
     </table>
   </div>
 
-  <script>
-    const form = document.getElementById('fanForm');
-    const table = document.getElementById('fansTable');
-    const clearBtn = document.getElementById('clearBtn');
-    const ageInput = document.getElementById('age');
-    const ageWarning = document.getElementById('ageWarning');
+  <footer>
+    <p>&copy; 2026 Ronaldo Fan Hub</p>
+  </footer>
 
-    ageInput.addEventListener('input', function() {
-      const age = Number(ageInput.value);
-      if (age < 1 || age > 100 || isNaN(age)) {
-        ageWarning.style.display = 'inline';
-      } else {
-        ageWarning.style.display = 'none';
-      }
-    });
+<script>
+const form = document.getElementById('fanForm');
+const table = document.getElementById('fansTable');
+const clearBtn = document.getElementById('clearBtn');
+const ageInput = document.getElementById('age');
+const ageWarning = document.getElementById('ageWarning');
 
-    
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+ageInput.addEventListener('input', function() {
+  const age = Number(ageInput.value);
+  ageWarning.style.display = (age < 1 || age > 100 || isNaN(age)) ? 'inline' : 'none';
+});
 
-      const name = document.getElementById('name').value.trim();
-      const surname = document.getElementById('surname').value.trim();
-      const gender = document.querySelector('input[name="gender"]:checked').value;
-      const age = Number(ageInput.value);
-      const club = document.getElementById('club').value;
-      const reason = document.getElementById('reason').value.trim();
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
 
-     
-      if (age < 1 || age > 100 || isNaN(age)) {
-        alert("Please enter a valid age between 1 and 100.");
-        return;
-      }
+  const name = document.getElementById('name').value.trim();
+  const surname = document.getElementById('surname').value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const age = Number(ageInput.value);
+  const club = document.getElementById('club').value;
+  const reason = document.getElementById('reason').value.trim();
 
-     
-      const newRow = table.insertRow();
-      newRow.insertCell(0).innerText = name;
-      newRow.insertCell(1).innerText = surname;
-      newRow.insertCell(2).innerText = gender;
-      newRow.insertCell(3).innerText = age;
-      newRow.insertCell(4).innerText = club;
-      newRow.insertCell(5).innerText = reason;
+  if (age < 1 || age > 100 || isNaN(age)) {
+    alert("Please enter a valid age between 1 and 100.");
+    return;
+  }
 
-      form.reset();
-      ageWarning.style.display = 'none';
-    });
+  const newRow = table.insertRow();
+  newRow.insertCell(0).innerText = name;
+  newRow.insertCell(1).innerText = surname;
+  newRow.insertCell(2).innerText = gender;
+  newRow.insertCell(3).innerText = age;
+  newRow.insertCell(4).innerText = club;
+  newRow.insertCell(5).innerText = reason;
 
-  
-    clearBtn.addEventListener('click', function() {
-      form.reset();
-      ageWarning.style.display = 'none';
-    });
-  </script>
+  form.reset();
+  ageWarning.style.display = 'none';
+});
+
+clearBtn.addEventListener('click', function() {
+  form.reset();
+  ageWarning.style.display = 'none';
+});
+</script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
