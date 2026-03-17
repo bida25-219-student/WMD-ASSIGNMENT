@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronaldo Fan Form</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* FORM CARD */
+.form-card {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* FORM ELEMENTS */
+input, select, textarea {
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #ccc;
+    color: #fff;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #ddd;
+}
+
+.btn-submit {
+    background-color: #18f548;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-clear {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* TABLE */
+table {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+th, td {
+    vertical-align: middle;
+}
+
+/* AGE WARNING */
+#ageWarning {
+    color: #ff5555;
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    margin-top: 40px;
+}
+.navbar-brand img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+    <img src="logo.png" alt="Ronaldo Logo" width="45" height="45" class="me-2">
+    <span style="color:#f5c518;">Ronaldo</span> Fan Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="trophies.html">Trophies</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
+          <li class="nav-item"><a class="nav-link active" href="form.html">Form</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FORM -->
+  <div class="form-card">
+    <h1 class="text-center mb-4">Join Ronaldo Fans</h1>
+
+    <form id="fanForm">
+
+      <label>First Name:</label>
+      <input type="text" id="name" class="form-control" required placeholder="Enter your first name">
+
+      <label>Surname:</label>
+      <input type="text" id="surname" class="form-control" required placeholder="Enter your surname">
+
+      <label>Gender:</label>
+      <div class="mb-3">
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+      </div>
+
+      <label>Age:</label>
+      <input type="number" id="age" class="form-control" min="1" max="100" required>
+      <span id="ageWarning">Age must be between 1 and 100.</span>
+
+      <label>Favorite Version of Ronaldo:</label>
+      <select id="club" class="form-select" required>
+        <option value="">--Select Club--</option>
+        <option>Manchester United</option>
+        <option>Real Madrid</option>
+        <option>Juventus</option>
+        <option>Al Nassr</option>
+      </select>
+
+      <label>Why do you love Ronaldo?</label>
+      <textarea id="reason" class="form-control" rows="3" required placeholder="Share your reason"></textarea>
+
+      <button type="submit" class="btn btn-submit w-100 mb-2">Submit</button>
+      <button type="button" id="clearBtn" class="btn btn-clear w-100">Clear</button>
+
+    </form>
+  </div>
+
+  <!-- TABLE -->
+  <h2 class="text-center mt-5">Submitted Fans</h2>
+
+  <div class="table-responsive" style="width:90%; margin:auto;">
+    <table id="fansTable" class="table table-bordered text-center">
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Favorite Club</th>
+        <th>Reason</th>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Ronaldo Fan Hub</p>
+  </footer>
+
+<script>
+const form = document.getElementById('fanForm');
+const table = document.getElementById('fansTable');
+const clearBtn = document.getElementById('clearBtn');
+const ageInput = document.getElementById('age');
+const ageWarning = document.getElementById('ageWarning');
+
+ageInput.addEventListener('input', function() {
+  const age = Number(ageInput.value);
+  ageWarning.style.display = (age < 1 || age > 100 || isNaN(age)) ? 'inline' : 'none';
+});
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const surname = document.getElementById('surname').value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const age = Number(ageInput.value);
+  const club = document.getElementById('club').value;
+  const reason = document.getElementById('reason').value.trim();
+
+  if (age < 1 || age > 100 || isNaN(age)) {
+    alert("Please enter a valid age between 1 and 100.");
+    return;
+  }
+
+  const newRow = table.insertRow();
+  newRow.insertCell(0).innerText = name;
+  newRow.insertCell(1).innerText = surname;
+  newRow.insertCell(2).innerText = gender;
+  newRow.insertCell(3).innerText = age;
+  newRow.insertCell(4).innerText = club;
+  newRow.insertCell(5).innerText = reason;
+
+  form.reset();
+  ageWarning.style.display = 'none';
+});
+
+clearBtn.addEventListener('click', function() {
+  form.reset();
+  ageWarning.style.display = 'none';
+});
+</script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
