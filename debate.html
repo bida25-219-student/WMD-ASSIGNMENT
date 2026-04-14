@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOAT Debate</title>
+
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<style>
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+.debate-card {
+    max-width: 700px;
+    margin: 50px auto;
+    background: rgba(0,0,0,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,100,0.3);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-vote {
+    background: #18f548;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.results {
+    margin-top: 30px;
+}
+
+.progress {
+    height: 25px;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+    <img src="logo.png" alt="Ronaldo Logo" width="45" height="45" class="me-2">
+    <span style="color:#f5c518;">Ronaldo</span> Fan Hub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="trophies.html">Trophies</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="debate.html">Debate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="debate-card">
+<h1>⚽ Who is the GOAT?</h1>
+
+<form id="goatForm">
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="goat" value="Ronaldo">
+        <label class="form-check-label">Cristiano Ronaldo</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="goat" value="Messi">
+        <label class="form-check-label">Lionel Messi</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="goat" value="Pele">
+        <label class="form-check-label">Pelé</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="goat" value="Maradona">
+        <label class="form-check-label">Diego Maradona</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="goat" value="R9">
+        <label class="form-check-label">Ronaldo Nazário</label>
+    </div>
+
+    <button type="submit" class="btn btn-vote w-100 mt-3">Vote</button>
+</form>
+
+<div class="results">
+    <h3 class="text-center">Results</h3>
+
+    <p>Cristiano Ronaldo</p>
+    <div class="progress">
+        <div id="ronaldoBar" class="progress-bar bg-success" style="width:0%">0%</div>
+    </div>
+
+    <p>Lionel Messi</p>
+    <div class="progress">
+        <div id="messiBar" class="progress-bar bg-info" style="width:0%">0%</div>
+    </div>
+
+    <p>Pelé</p>
+    <div class="progress">
+        <div id="peleBar" class="progress-bar bg-warning" style="width:0%">0%</div>
+    </div>
+
+    <p>Diego Maradona</p>
+    <div class="progress">
+        <div id="maradonaBar" class="progress-bar bg-danger" style="width:0%">0%</div>
+    </div>
+
+    <p>Ronaldo Nazario</p>
+    <div class="progress">
+        <div id="r9Bar" class="progress-bar bg-light text-dark" style="width:0%">0%</div>
+    </div>
+</div>
+
+</div>
+
+<script>
+let votes = JSON.parse(localStorage.getItem("goatVotes")) || {
+    Ronaldo: 0,
+    Messi: 0,
+    Pele: 0,
+    Maradona: 0,
+    R9: 0
+};
+
+const form = document.getElementById("goatForm");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const selected = document.querySelector('input[name="goat"]:checked');
+    if(!selected){
+        alert("Please select a player!");
+        return;
+    }
+
+    votes[selected.value]++;
+    localStorage.setItem("goatVotes", JSON.stringify(votes));
+
+    updateResults();
+    form.reset();
+});
+
+function updateResults(){
+    const total = Object.values(votes).reduce((a,b)=>a+b,0);
+
+    if(total === 0) return;
+
+    document.getElementById("ronaldoBar").style.width = (votes.Ronaldo/total*100)+"%";
+    document.getElementById("ronaldoBar").innerText = Math.round(votes.Ronaldo/total*100)+"%";
+
+    document.getElementById("messiBar").style.width = (votes.Messi/total*100)+"%";
+    document.getElementById("messiBar").innerText = Math.round(votes.Messi/total*100)+"%";
+
+    document.getElementById("peleBar").style.width = (votes.Pele/total*100)+"%";
+    document.getElementById("peleBar").innerText = Math.round(votes.Pele/total*100)+"%";
+
+    document.getElementById("maradonaBar").style.width = (votes.Maradona/total*100)+"%";
+    document.getElementById("maradonaBar").innerText = Math.round(votes.Maradona/total*100)+"%";
+
+    document.getElementById("r9Bar").style.width = (votes.R9/total*100)+"%";
+    document.getElementById("r9Bar").innerText = Math.round(votes.R9/total*100)+"%";
+}
+
+updateResults();
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
