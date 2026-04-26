@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ronaldo Fan Form</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css"> 
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.nav-link.active {
+    color: #e5e2e2 !important;
+    font-weight: bold;
+}
+.debate-card {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.btn-vote {
+    background: #18f548;
+    color: black;
+    font-weight: bold;
+    border: none;
+}
+
+.progress {
+    height: 25px;
+}
+
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header role="banner">
+
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
+
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+                <img src="logo.png" alt="Ronaldo Fan Hub Logo" width="45" height="45" class="me-2">
+                <span style="color:#f5c518;">Ronaldo</span> Fan Hub
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#nav"
+                    aria-controls="nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse" id="nav">
+
+                <ul class="navbar-nav ms-auto" role="menubar">
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="about.html" role="menuitem">About</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="trophies.html" role="menuitem">Trophies</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="stats.html" role="menuitem">Stats</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="skills.html" role="menuitem">Skills</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="forms.html" role="menuitem">Forms</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="debate.html" role="menuitem">Debate</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="quiz.html" role="menuitem">Quiz</a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="contact.html" role="menuitem">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- MAIN -->
+<main>
+
+<!-- DEBATE SECTION -->
+<section class="debate-card">
+
+<h1 class="text-center mb-4">⚽ Who is the GOAT?</h1>
+
+<!-- VOTING FORM -->
+<form id="goatForm">
+
+<!-- OPTIONS -->
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="goat" value="Ronaldo" id="ronaldo">
+    <label class="form-check-label" for="ronaldo">Cristiano Ronaldo</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="goat" value="Messi" id="messi">
+    <label class="form-check-label" for="messi">Lionel Messi</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="goat" value="Pele" id="pele">
+    <label class="form-check-label" for="pele">Pelé</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="goat" value="Maradona" id="maradona">
+    <label class="form-check-label" for="maradona">Diego Maradona</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="goat" value="R9" id="r9">
+    <label class="form-check-label" for="r9">Ronaldo Nazário</label>
+</div>
+
+<!-- BUTTON -->
+<button type="submit" class="btn btn-vote w-100 mt-3">Vote</button>
+
+</form>
+
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="container">
+
+<h2 class="text-center mt-5">Results</h2>
+
+<p>Cristiano Ronaldo</p>
+<div class="progress">
+    <div id="ronaldoBar" class="progress-bar bg-success">0%</div>
+</div>
+
+<p>Lionel Messi</p>
+<div class="progress">
+    <div id="messiBar" class="progress-bar bg-info">0%</div>
+</div>
+
+<p>Pelé</p>
+<div class="progress">
+    <div id="peleBar" class="progress-bar bg-warning">0%</div>
+</div>
+
+<p>Diego Maradona</p>
+<div class="progress">
+    <div id="maradonaBar" class="progress-bar bg-danger">0%</div>
+</div>
+
+<p>Ronaldo Nazário</p>
+<div class="progress">
+    <div id="r9Bar" class="progress-bar bg-light text-dark">0%</div>
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2026 Ronaldo Fan Hub | Created by Yaone Phalane</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+let votes = JSON.parse(localStorage.getItem("goatVotes")) || {
+    Ronaldo: 0,
+    Messi: 0,
+    Pele: 0,
+    Maradona: 0,
+    R9: 0
+};
+
+const form = document.getElementById("goatForm");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const selected = document.querySelector('input[name="goat"]:checked');
+    if(!selected){
+        alert("Please select a player!");
+        return;
+    }
+
+    votes[selected.value]++;
+    localStorage.setItem("goatVotes", JSON.stringify(votes));
+
+    updateResults();
+    form.reset();
+});
+
+function updateResults(){
+    const total = Object.values(votes).reduce((a,b)=>a+b,0);
+    if(total === 0) return;
+
+    document.getElementById("ronaldoBar").style.width = (votes.Ronaldo/total*100)+"%";
+    document.getElementById("ronaldoBar").innerText = Math.round(votes.Ronaldo/total*100)+"%";
+
+    document.getElementById("messiBar").style.width = (votes.Messi/total*100)+"%";
+    document.getElementById("messiBar").innerText = Math.round(votes.Messi/total*100)+"%";
+
+    document.getElementById("peleBar").style.width = (votes.Pele/total*100)+"%";
+    document.getElementById("peleBar").innerText = Math.round(votes.Pele/total*100)+"%";
+
+    document.getElementById("maradonaBar").style.width = (votes.Maradona/total*100)+"%";
+    document.getElementById("maradonaBar").innerText = Math.round(votes.Maradona/total*100)+"%";
+
+    document.getElementById("r9Bar").style.width = (votes.R9/total*100)+"%";
+    document.getElementById("r9Bar").innerText = Math.round(votes.R9/total*100)+"%";
+}
+
+updateResults();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
