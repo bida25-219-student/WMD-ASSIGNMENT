@@ -17,16 +17,25 @@ body {
     background-size: cover;
     color: #fff;
 }
-
 .navbar {
     background-color: rgba(0, 0, 0, 0.9) !important;
 }
-
-.navbar-brand img {
-    border-radius: 50%;
-    object-fit: cover;
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
 }
-
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.section {
+    padding: 40px 0;
+}
+.section-title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f5c518;
+    display: inline-block;
+    padding-bottom: 5px;
+}
 .form-card {
     max-width: 600px;
     margin: 40px auto;
@@ -40,27 +49,22 @@ input, select, textarea {
     background: rgba(255,255,255,0.1);
     color: white;
 }
-
 .btn-submit {
     background-color: #18f548;
     font-weight: bold;
     color: black;
 }
-
 .btn-clear {
     background-color: #dc3545;
 }
-
 #ageWarning {
     color: #ff5555;
     display: none;
 }
-
 table {
     background: rgba(0,0,0,0.8);
     color: white;
 }
-
 footer {
     text-align: center;
     padding: 20px;
@@ -69,7 +73,6 @@ footer {
 }
 </style>
 </head>
-
 <body>
  
 <header>
@@ -172,10 +175,10 @@ footer {
 <script>
 const form = document.getElementById('fanForm');
 const tableBody = document.querySelector('#fansTable tbody');
+const table = document.getElementById('fansTable');
 const clearBtn = document.getElementById('clearBtn');
 const ageInput = document.getElementById('age');
 const ageWarning = document.getElementById('ageWarning');
-
 
 ageInput.addEventListener('input', () => {
     const age = Number(ageInput.value);
